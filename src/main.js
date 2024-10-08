@@ -6,6 +6,10 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
+import './scss/main.scss'
+import 'normalize.css'
+// import 'sass-embedded'
+
 const app = createApp(App)
 
 app.use(createPinia())

@@ -1,0 +1,19 @@
+
+@import "global/reset";
+
+$primary-color: #FFF9DE;
+$filter1-color: #D2CEFF;
+$filter2-color:#D1E5F7;
+$filter3-color: #FFCECE;
+$filter4-color:#DAF2D6;
+$font-family: 'Arial, sans-serif';
+
+.filter-circle{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: $filter1-color;
+}
+
+
