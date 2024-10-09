@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import { useNotesStore } from '../stores/notesStore';
+
 export default{
   name: 'ModalView',
 
@@ -33,8 +35,11 @@ export default{
   },
   data() {
     return {
+      title: '',
+      description: '',
       notes: JSON.parse(localStorage.getItem('notes')) || [],
       // currentNote: null,
+      
     };
   },
   methods:{
@@ -49,15 +54,16 @@ export default{
      
         this.notes.push(note);
   
-      this.saveNotes();
-      this.closeModal();
+        useNotesStore().setNote(note)
+      // this.saveNotes();
+      this.$emit('closeModal');
     },
     saveNotes() {
       localStorage.setItem('notes', JSON.stringify(this.notes));
     },
-    closeModal(){
-      this.$router.push('/')
-    },
+    // closeModal(){
+    //   this.$router.push('/')
+    // },
 
 
    
